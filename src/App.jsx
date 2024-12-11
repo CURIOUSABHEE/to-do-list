@@ -10,6 +10,15 @@ function App() {
         <input placeholder="Add a Task" />
         <button> + </button>
       </div>
+      <div className="container">
+        <div className="todo">
+          <p>Go to the gym</p>
+          <div className="actions">
+            <input type="checkbox" />
+            <button> Delete </button>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
