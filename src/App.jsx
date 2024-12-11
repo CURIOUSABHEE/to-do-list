@@ -12,11 +12,17 @@ function App() {
   }
   function addTask() {
     if (setInputVal != " ") {
-      setTodos((prevTask) => [...prevTask, inputVal]);
+      setTodos((prevTodos) => [...prevTodos, inputVal]);
       setInputVal(" ");
     }
   }
-  console.log(todos);
+  function delTodo(todoIndex) {
+    setTodos((prevTodos) =>
+      prevTodos.filter((_, index) => {
+        return index != todoIndex;
+      })
+    );
+  }
   return (
     <main>
       <h1>To Do List</h1>
@@ -25,7 +31,7 @@ function App() {
         writeTodo={writeTodo}
         addTask={addTask}
       />
-      <TodoListComp todos={todos} />
+      <TodoListComp todos={todos} delTodo={delTodo} />
     </main>
   );
 }

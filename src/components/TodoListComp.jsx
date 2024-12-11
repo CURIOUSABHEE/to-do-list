@@ -1,11 +1,11 @@
 import React from "react";
 import Todo from "./Todo";
 
-function TodoListComp({ todos }) {
+function TodoListComp({ todos, delTodo }) {
   return (
     <div className="container">
-      {todos.map((todo) => {
-        return <Todo todo={todo} />;
+      {todos.map((todo, index) => {
+        return <Todo key={index} todo={todo} index={index} delTodo={delTodo} />;
       })}
     </div>
   );
